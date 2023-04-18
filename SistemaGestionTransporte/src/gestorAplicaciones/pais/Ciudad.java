@@ -1,10 +1,13 @@
-package gestorAplicaciones;
+package gestorAplicaciones.pais;
 
+
+import gestorAplicaciones.util.Pair;
 
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.PriorityQueue;
+
 
 public class Ciudad {
     private String nombre;

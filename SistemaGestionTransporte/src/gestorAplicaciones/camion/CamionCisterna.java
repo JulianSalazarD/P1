@@ -1,7 +1,7 @@
-package gestorAplicaciones;
+package gestorAplicaciones.camion;
 
-public class CamionPortaCoches extends Camion{
-    public CamionPortaCoches(String placa, String tamanio, String capacidad, String costo, String pais) {
+public class CamionCisterna extends Camion{
+    public CamionCisterna(String placa, String tamanio, String capacidad, String costo, String pais) {
         super(placa, tamanio, capacidad, costo, pais);
     }
 

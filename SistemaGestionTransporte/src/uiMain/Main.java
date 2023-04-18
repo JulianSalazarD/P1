@@ -1,5 +1,8 @@
 package uiMain;
 
+import uiMain.seccion.Seccion;
+import uiMain.seccion.SeccionUsuario;
+
 import java.util.Scanner;
 
 public class Main {

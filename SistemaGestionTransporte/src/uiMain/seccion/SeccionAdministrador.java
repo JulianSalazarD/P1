@@ -1,34 +1,31 @@
-package uiMain;
+package uiMain.seccion;
 
-import java.util.Scanner;
+import uiMain.Main;
 
-public class SeccionUsuario implements Seccion {
+public class SeccionAdministrador implements Seccion {
     int opcion = 0;
     @Override
     public void Inicio() {
-        //int opcion = 0;
-        do {
-            System.out.println("Ingrese:\n1.iniciar Seccion.\n2 Registrarse.\n0salir.");
-            this.opcion = Main.getOption();
-            switch (this.opcion) {
-                case 0 ->
-                    //salir
-                        System.out.println("Vuelva pronto");
-                case 1 ->
-                    //Ingresar
-                        this.ingresar();
-                case 2 ->
-                    //Regidtar usuario
-                        this.registrarUSuario();
-                default -> System.out.println("Opcion no valida.\n");
-            }
+        do{
+            System.out.println("Ingrese:\n1.ingresar como administrador.\n0salir.");
+
+        this.opcion = Main.getOption();
+        switch (this.opcion) {
+            case 0 ->
+                //salir
+                    System.out.println("Saliendo...");
+            case 1 ->
+                //Ingresar
+                    this.ingresar();
+            default -> System.out.println("Opcion no valida.\n");
+        }
         }while(this.opcion != 0);
     }
 
     @Override
     public void showMenu() {
         do{
-            System.out.println("Ingrese:\nRealizar pedido.\n2 Seguir pedido.\n3. historial de pedido.\n4.PQRS.\n0salir.");
+            System.out.println("Ingrese:\n1. Historial de pedidos.\n2 Pedidos en curso.\n3. Trabajadores\n4. Vehiculos\n5. Usuarios.\n0salir.");
             this.opcion = Main.getOption();
             switch (this.opcion) {
                 case 0:
@@ -36,22 +33,27 @@ public class SeccionUsuario implements Seccion {
                     break;
                 case 1:
                     /*
-                    Realizar pedido
+                    mostrar historial de pedidos
                      */
                     break;
                 case 2:
                     /*
-                    seguimiento de pedido (funcionalidad)
+                    Pedidiso en curso
                      */
                     break;
                 case 3:
                     /*
-                    mostar historial de pedidos
+                    mlista de trabajadores y estado
                      */
                     break;
                 case 4:
                     /*
-                    //funcionalidad PQRS
+                    lista de vehiculos
+                     */
+                    break;
+                case 5:
+                    /*
+                    lista de usuarios
                      */
                     break;
                 default:
@@ -82,13 +84,5 @@ public class SeccionUsuario implements Seccion {
     @Override
     public boolean validarInformacion(String usuario, String clave) {
         return false;
-    }
-
-    public void registrarUSuario(){
-        /*
-        1.Pedir datos.
-        2.Verificar informacion
-        3.Crear usuario
-         */
     }
 }

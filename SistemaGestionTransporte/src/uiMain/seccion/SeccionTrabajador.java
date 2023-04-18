@@ -1,6 +1,6 @@
-package uiMain;
+package uiMain.seccion;
 
-import java.util.Scanner;
+import uiMain.Main;
 
 public class SeccionTrabajador implements Seccion{
     int opcion = 0;

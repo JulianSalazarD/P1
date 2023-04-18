@@ -1,4 +1,4 @@
-package gestorAplicaciones;
+package gestorAplicaciones.entidades;
 
 public class Administrador extends Empleado{
 	

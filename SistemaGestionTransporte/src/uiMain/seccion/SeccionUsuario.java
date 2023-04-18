@@ -1,29 +1,34 @@
-package uiMain;
+package uiMain.seccion;
 
-public class SeccionAdministrador implements Seccion {
+import uiMain.Main;
+
+public class SeccionUsuario implements Seccion {
     int opcion = 0;
     @Override
     public void Inicio() {
-        do{
-            System.out.println("Ingrese:\n1.ingresar como administrador.\n0salir.");
-
-        this.opcion = Main.getOption();
-        switch (this.opcion) {
-            case 0 ->
-                //salir
-                    System.out.println("Saliendo...");
-            case 1 ->
-                //Ingresar
-                    this.ingresar();
-            default -> System.out.println("Opcion no valida.\n");
-        }
+        //int opcion = 0;
+        do {
+            System.out.println("Ingrese:\n1.iniciar Seccion.\n2 Registrarse.\n0salir.");
+            this.opcion = Main.getOption();
+            switch (this.opcion) {
+                case 0 ->
+                    //salir
+                        System.out.println("Vuelva pronto");
+                case 1 ->
+                    //Ingresar
+                        this.ingresar();
+                case 2 ->
+                    //Regidtar usuario
+                        this.registrarUSuario();
+                default -> System.out.println("Opcion no valida.\n");
+            }
         }while(this.opcion != 0);
     }
 
     @Override
     public void showMenu() {
         do{
-            System.out.println("Ingrese:\n1. Historial de pedidos.\n2 Pedidos en curso.\n3. Trabajadores\n4. Vehiculos\n5. Usuarios.\n0salir.");
+            System.out.println("Ingrese:\nRealizar pedido.\n2 Seguir pedido.\n3. historial de pedido.\n4.PQRS.\n0salir.");
             this.opcion = Main.getOption();
             switch (this.opcion) {
                 case 0:
@@ -31,27 +36,22 @@ public class SeccionAdministrador implements Seccion {
                     break;
                 case 1:
                     /*
-                    mostrar historial de pedidos
+                    Realizar pedido
                      */
                     break;
                 case 2:
                     /*
-                    Pedidiso en curso
+                    seguimiento de pedido (funcionalidad)
                      */
                     break;
                 case 3:
                     /*
-                    mlista de trabajadores y estado
+                    mostar historial de pedidos
                      */
                     break;
                 case 4:
                     /*
-                    lista de vehiculos
-                     */
-                    break;
-                case 5:
-                    /*
-                    lista de usuarios
+                    //funcionalidad PQRS
                      */
                     break;
                 default:
@@ -82,5 +82,13 @@ public class SeccionAdministrador implements Seccion {
     @Override
     public boolean validarInformacion(String usuario, String clave) {
         return false;
+    }
+
+    public void registrarUSuario(){
+        /*
+        1.Pedir datos.
+        2.Verificar informacion
+        3.Crear usuario
+         */
     }
 }

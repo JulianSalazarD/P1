@@ -1,4 +1,6 @@
-package gestorAplicaciones;
+package gestorAplicaciones.producto;
+
+import gestorAplicaciones.entidades.Usuario;
 
 public class Factura {
     private static  long IDfactura = 100000000;

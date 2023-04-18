@@ -1,4 +1,4 @@
-package gestorAplicaciones;
+package gestorAplicaciones.entidades;
 
 import java.util.ArrayList;
 

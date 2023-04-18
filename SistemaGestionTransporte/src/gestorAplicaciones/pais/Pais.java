@@ -1,4 +1,4 @@
-package gestorAplicaciones;
+package gestorAplicaciones.pais;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 
-public enum Pais implements Archivo {
+public enum Pais {
     COLOMBIA("Colombia"),
     PANAMA("Panama"),
     ECUADOR("Ecuador");
@@ -105,7 +105,6 @@ public enum Pais implements Archivo {
         }
     }
 
-    @Override
     public String LeerArchivo(String fileName) {
         StringBuilder texto = new StringBuilder();
         try {
@@ -122,7 +121,6 @@ public enum Pais implements Archivo {
         return texto.toString();
     }
 
-    @Override
     public void EditarArchivo(String fileName, String text) {
 
     }

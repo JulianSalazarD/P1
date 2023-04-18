@@ -1,4 +1,4 @@
-package gestorAplicaciones;
+package gestorAplicaciones.producto;
 
 public class Producto {
     private String tipo;

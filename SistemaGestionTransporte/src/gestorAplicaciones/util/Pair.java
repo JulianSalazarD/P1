@@ -1,4 +1,4 @@
-package gestorAplicaciones;
+package gestorAplicaciones.util;
 
 public class Pair<K, V> {
     private final K key;

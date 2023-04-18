@@ -1,4 +1,4 @@
-package gestorAplicaciones;
+package gestorAplicaciones.producto;
 
 import java.util.ArrayList;
 

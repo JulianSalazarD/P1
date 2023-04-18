@@ -1,7 +1,8 @@
-package gestorAplicaciones;
+package gestorAplicaciones.camion;
+
+import gestorAplicaciones.util.Pair;
 
 import java.util.ArrayList;
-import java.util.Map;
 
 public abstract class Camion {
     //atributos
