@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Usuario{
 	
 	//atributos serializador
-	private static final long serialVersionUID = 1L;
+	//private static final long serialVersionUID = 1L;
 	private static ArrayList<Usuario> usuarios = new ArrayList<Usuario>();
 	private final String nombre;
 	private String clave;
