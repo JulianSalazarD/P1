@@ -8,7 +8,7 @@ public class SeccionAdministrador implements Seccion {
     @Override
     public void Inicio() {
         do{
-            System.out.println("Ingrese:\n1.ingresar como administrador.\n0salir.");
+            System.out.println("Ingrese:\n1. ingresar como administrador.\n0. salir.");
 
         this.opcion = Main.getOption();
         switch (this.opcion) {
@@ -26,7 +26,7 @@ public class SeccionAdministrador implements Seccion {
     @Override
     public void showMenu() {
         do{
-            System.out.println("Ingrese:\n1. Historial de pedidos.\n2 Pedidos en curso.\n3. Trabajadores\n4. Vehiculos\n5. Usuarios.\n0salir.");
+            System.out.println("Ingrese:\n1. Historial de pedidos.\n2. Pedidos en curso.\n3. Trabajadores.\n4. Vehiculos.\n5. Usuarios.\n0salir.");
             this.opcion = Main.getOption();
             switch (this.opcion) {
                 case 0:

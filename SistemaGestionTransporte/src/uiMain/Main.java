@@ -20,27 +20,26 @@ public class Main {
             System.out.println("Presione:\n1. Ingresar como usuario\n2. Ingresar como trabajador\n3. Ingresar como administrador\n0. Salir");
             opcion = Main.getOption();
             switch (opcion) {
-                case 0:
+                case 0 ->
                     //cerrar programa
-                    System.out.println("Vuelva pronto");
-                    break;
-                case 1:
+                        System.out.println("Vuelva pronto");
+                case 1 -> {
                     //Ingrese como usuario
 
                     seccion = new SeccionUsuario();
                     seccion.Inicio();
-                    break;
-                case 2:
+                }
+                case 2 -> {
                     //Igreso como trabajador
                     seccion = new SeccionTrabajador();
                     seccion.Inicio();
-                    break;
-                case 3:
+                }
+                case 3 -> {
                     //Ingreso como administrador
                     seccion = new SeccionAdministrador();
-                    break;
-                default:
-                    System.out.println("Opcion no valida.\n");
+                    seccion.Inicio();
+                }
+                default -> System.out.println("Opcion no valida.\n");
             }
         }while (opcion != 0);
     }
@@ -52,7 +51,6 @@ public class Main {
     }
 
     public static String pedirDato(){
-        System.out.println("Usuario/ID: ");
         Scanner scanner = new Scanner(System.in);
         return scanner.nextLine();
     }

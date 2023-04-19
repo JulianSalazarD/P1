@@ -1,6 +1,7 @@
 package uiMain.seccion;
 
 import gestorAplicaciones.entidades.Usuario;
+import gestorAplicaciones.producto.Factura;
 import uiMain.Main;
 
 public class SeccionUsuario implements Seccion {
@@ -9,7 +10,7 @@ public class SeccionUsuario implements Seccion {
     @Override
     public void Inicio() {
         do {
-            System.out.println("Ingrese:\n1.iniciar Seccion.\n2 Registrarse.\n0salir.");
+            System.out.println("Ingrese:\n1. iniciar Seccion.\n2. Registrarse.\n0. salir.");
             this.opcion = Main.getOption();
             switch (this.opcion) {
                 case 0 ->
@@ -29,7 +30,7 @@ public class SeccionUsuario implements Seccion {
     @Override
     public void showMenu() {
         do{
-            System.out.println("Ingrese:\nRealizar pedido.\n2 Seguir pedido.\n3. historial de pedido.\n4.PQRS.\n0salir.");
+            System.out.println("Ingrese:\n1. Realizar pedido.\n2. Seguir pedido.\n3. historial de pedido.\n4. PQRS.\n0. salir.");
             this.opcion = Main.getOption();
             switch (this.opcion) {
                 case 0:
@@ -38,6 +39,7 @@ public class SeccionUsuario implements Seccion {
                 case 1:
                     /*
                     Realizar pedido
+
                      */
                     break;
                 case 2:
@@ -46,9 +48,8 @@ public class SeccionUsuario implements Seccion {
                      */
                     break;
                 case 3:
-                    /*
-                    mostar historial de pedidos
-                     */
+                    //mostar historial de pedidos
+                    Factura.historialFacturas(this.usuario);
                     break;
                 case 4:
                     /*
@@ -85,12 +86,12 @@ public class SeccionUsuario implements Seccion {
 
     @Override
     public  Usuario validarInformacion(String usuario, String clave) {
-        if(usuario.matches("[a-zA-Z]+")){
+        if(usuario != null && usuario.chars().allMatch(c -> c == ' ' || Character.isLetter(c))){
             for (Usuario u : Usuario.getUsuarios()){
                 if(u.comprobarUsuario(usuario,clave)) return u;
             }
         }
-        else if(usuario.matches("\\d+")){
+        else if(usuario != null && usuario.chars().allMatch(Character::isDigit)){
             for (Usuario u : Usuario.getUsuarios()){
                 if(u.comprobarUsuario(Long.parseLong(usuario),clave)) return u;
             }
@@ -120,7 +121,7 @@ public class SeccionUsuario implements Seccion {
 
     }
     private boolean isNombreValido(String nombre){
-        if(!nombre.matches("[a-zA-Z0-9]")){
+        if(nombre == null || !nombre.chars().allMatch(c -> c == ' ' || Character.isLetter(c))){
             System.out.println("El nombre solo debe tener caracteres alfanumericos.");
             return false;
         }
@@ -133,7 +134,7 @@ public class SeccionUsuario implements Seccion {
     }
 
     private boolean isIDValido(String id){
-        if(!id.matches("\\d+")){
+        if(id == null || !id.chars().allMatch(Character::isDigit)){
             System.out.println("la identificacion debe contener solo caracteres numericos.");
             return false;
         }
@@ -145,7 +146,7 @@ public class SeccionUsuario implements Seccion {
     }
 
     private boolean isCorreoValido(String correo){
-        if(!correo.contains("@") && correo.charAt(correo.length()-1) == '@'){
+        if(!correo.contains("@") || correo.charAt(correo.length()-1) == '@'){
             System.out.println("correo no valido.");
             return false;
         }
