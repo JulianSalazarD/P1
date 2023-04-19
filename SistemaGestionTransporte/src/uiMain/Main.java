@@ -1,6 +1,8 @@
 package uiMain;
 
 import uiMain.seccion.Seccion;
+import uiMain.seccion.SeccionAdministrador;
+import uiMain.seccion.SeccionTrabajador;
 import uiMain.seccion.SeccionUsuario;
 
 import java.util.Scanner;
@@ -30,17 +32,12 @@ public class Main {
                     break;
                 case 2:
                     //Igreso como trabajador
-                    /*
-                    Validar ingreso
-                    menu trabajador
-                     */
+                    seccion = new SeccionTrabajador();
+                    seccion.Inicio();
                     break;
                 case 3:
                     //Ingreso como administrador
-                    /*
-                    Validar ingreso
-                    menu administrador
-                     */
+                    seccion = new SeccionAdministrador();
                     break;
                 default:
                     System.out.println("Opcion no valida.\n");
@@ -54,15 +51,15 @@ public class Main {
         return scanner.nextInt();
     }
 
-    public static String usurio(){
+    public static String pedirDato(){
         System.out.println("Usuario/ID: ");
         Scanner scanner = new Scanner(System.in);
         return scanner.nextLine();
     }
 
-    public static String clave(){
+   /* public static String clave(){
         System.out.println("Clave: ");
         Scanner scanner = new Scanner(System.in);
         return scanner.nextLine();
-    }
+    }*/
 }

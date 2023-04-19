@@ -1,5 +1,6 @@
 package uiMain.seccion;
 
+import gestorAplicaciones.entidades.Usuario;
 import uiMain.Main;
 
 public class SeccionAdministrador implements Seccion {
@@ -71,9 +72,10 @@ public class SeccionAdministrador implements Seccion {
     @Override
     public void ingresar() {
         String usuario,clave;
-        usuario = Main.usurio();
-        clave = Main.clave();
-        if (this.validarInformacion(usuario,clave)){
+        usuario = "Administrador";
+        System.out.println("Clave: ");
+        clave = Main.pedirDato();
+        if (this.validarInformacion(usuario,clave )!= null){
             System.out.println("correcto");
         }
         else{
@@ -82,7 +84,7 @@ public class SeccionAdministrador implements Seccion {
     }
 
     @Override
-    public boolean validarInformacion(String usuario, String clave) {
-        return false;
+    public Usuario validarInformacion(String usuario, String clave) {
+        return null;
     }
 }
