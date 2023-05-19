@@ -1,3 +1,5 @@
+package uiMain;
+
 import gestorAplicaciones.camion.CamionCisterna;
 import gestorAplicaciones.camion.CamionFrigorifico;
 import gestorAplicaciones.camion.CamionLona;
